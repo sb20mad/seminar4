@@ -2,22 +2,19 @@
 //            из 8 элементов и выводит их на экран.
 //  Вводим массив через консоль
 
-
-// int[] arr = new int[8];
-// string? seriesOfNumbers = Console.ReadLine();
-//Random rand = new Random();
-// Console.WriteLine("Введите число A ");
-// int n = Convert.ToInt32(Console.ReadLine());
-// for (int i=0; i<arr.Length; i++)
-// {
-//     arr[i] = rand.Next(0, 2);
-// }
-for (int i = 0; i < x; i++)
+Console.Write("Введите 8 чисел для создания массива : ");
+string str = Console.ReadLine();
+char[] arr = new char[str.Length]; // Создаем массив == длины строки
+if (str.Length != 8) //проверка количества цифр в строке
 {
-    for (int j = 0; j < y; j++)
-    {
-        Console.Write("mas[" + i + "," + j + "]: ");
-        mas[i, j] = int.Parse(Console.ReadLine());
-    }
+Console.WriteLine($"Нужно вводить 8 чисeл");
 }
-Console.WriteLine();
+else   
+       { // Копируем каждый символ в массив
+        for (int i = 0; i < str.Length; i++)
+         { 
+            arr[i] = str[i]; 
+        } 
+        Console.WriteLine(string.Join(", ", arr)); //вывод массива
+    }
+        
